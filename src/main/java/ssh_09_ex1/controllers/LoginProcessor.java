@@ -4,6 +4,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.RequestScope;
 
 import lombok.Data;
+import space.jbpark.utility.MyUtil;
 
 @RequestScope
 @Component
@@ -19,6 +20,12 @@ public class LoginProcessor {
 			return true;
 		}
 		return false;
+	}
+
+	public LoginProcessor() {
+		super();
+		var ps = MyUtil.getPrintStream();
+		ps.println("로그인 프로세서 생성됨");
 	}
 
 }
